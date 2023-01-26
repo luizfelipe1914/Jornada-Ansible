@@ -1,0 +1,8 @@
+- name: 1 - Instalando o hping3
+  hosts: ubuntu-dck-front
+
+  tasks:
+          - name: Instalar o hping3
+            package: name=hping3 state=present
+          - name: Adicionar a linha '192.168.100.106    srv-db-mysql' no arquivo /etc/hosts
+            lineinfile: path=/etc/hosts line='192.168.100.106    srv-db-mysql' state=present 
